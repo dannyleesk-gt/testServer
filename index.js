@@ -12,7 +12,14 @@ app.post("/debug", (req, res) => {
 });
 
 app.get("/callback", (req, res) => {
-    console.log(JSON.stringify(req));
+    console.log(
+        JSON.stringify({
+            headers: req.headers,
+            body: req.body,
+            params: req.params,
+            query: req.query
+        })
+    );
     res.status(200).json({ message: "success" });
 });
 
