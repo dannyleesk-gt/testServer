@@ -72,7 +72,7 @@ app.get("/.well-known", (req, res) => {
     return res.status(200).json(publicKeys);
 });
 
-app.use("*", (req, res) => {
+app.use("/{*path}", (req, res) => {
     return res.status(404).json({ errorMessage: "no such path" });
 });
 
