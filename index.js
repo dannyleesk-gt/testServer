@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParserMiddleware = require("./middleware/bodyParser");
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 3000;
 
 bodyParserMiddleware(app);
 
